@@ -8,51 +8,47 @@ import ActionButton from "./action-button";
 export default function HeroSection() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Decorative 3D elements */}
-      <div className="absolute top-20 right-10 md:right-32 perspective-1000">
+      {/* Simplified decorative 3D elements */}
+      <div className="absolute top-20 right-10 md:right-32">
         <motion.div
           className="w-20 h-20 md:w-32 md:h-32 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/30"
           animate={{
-            rotateY: [0, 360],
-            rotateX: [0, 15, 0, -15, 0],
+            rotate: [0, 360],
           }}
           transition={{
-            duration: 20,
+            duration: 30,
             repeat: Infinity,
             ease: "linear",
           }}
-          style={{ transformStyle: "preserve-3d" }}
         />
       </div>
       
-      <div className="absolute bottom-32 left-10 md:left-20 perspective-1000">
+      <div className="absolute bottom-32 left-10 md:left-20">
         <motion.div
           className="w-16 h-16 md:w-24 md:h-24 rounded-xl bg-gradient-to-br from-accent/20 to-primary/20 border border-accent/30"
           animate={{
-            rotateY: [360, 0],
-            rotateZ: [0, 10, 0, -10, 0],
+            rotate: [360, 0],
           }}
           transition={{
-            duration: 15,
+            duration: 25,
             repeat: Infinity,
             ease: "linear",
           }}
-          style={{ transformStyle: "preserve-3d" }}
         />
       </div>
 
       <div className="container mx-auto px-6 py-20 text-center relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.5 }}
           className="space-y-8"
         >
           {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.1, duration: 0.4 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass glow-sm"
           >
             <Sparkles className="w-4 h-4 text-primary" />
@@ -63,9 +59,9 @@ export default function HeroSection() {
 
           {/* Main heading */}
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
+            transition={{ delay: 0.15, duration: 0.5 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-balance"
           >
             <span className="text-gradient">{marketingHeadlines.mainHeadline}</span>
@@ -73,9 +69,9 @@ export default function HeroSection() {
 
           {/* Subtitle */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
+            transition={{ delay: 0.25, duration: 0.5 }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty"
           >
             {marketingHeadlines.subHeadline}
@@ -83,9 +79,9 @@ export default function HeroSection() {
 
           {/* Stats */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.8 }}
+            transition={{ delay: 0.35, duration: 0.5 }}
             className="flex flex-wrap justify-center gap-8 pt-8"
           >
             <div className="text-center">
@@ -106,9 +102,9 @@ export default function HeroSection() {
 
           {/* CTA */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9, duration: 0.8 }}
+            transition={{ delay: 0.45, duration: 0.5 }}
             className="pt-8"
           >
             <ActionButton actionText="Hire me" />
@@ -119,11 +115,11 @@ export default function HeroSection() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
+          transition={{ delay: 0.6 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2"
         >
           <motion.div
-            animate={{ y: [0, 10, 0] }}
+            animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
             className="flex flex-col items-center gap-2 text-muted-foreground"
           >

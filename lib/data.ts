@@ -94,23 +94,27 @@ export interface Project {
   title: string;
   description: string;
   link: string;
+  emoji: string;
 }
 
 export const projects: Project[] = [
   {
-    title: "Project 1",
-    description: "Give a short description about project 1",
-    link: "https://github.com/",
+    title: "Mate Chess",
+    description: "Platforma szachowa z funkcjami gry online, analizy partii i nauki strategii szachowych.",
+    link: "https://github.com/matiqueue/mate-chess.pl",
+    emoji: "♟️",
   },
   {
-    title: "Project 2",
-    description: "Give a short description about project 2",
-    link: "https://github.com/",
+    title: "MineMaster AI",
+    description: "Inteligentny asystent AI do gry Minecraft, pomagajacy w budowaniu i automatyzacji.",
+    link: "https://github.com/matiqueue/MineMaster-AI",
+    emoji: "⛏️",
   },
   {
-    title: "Project 3",
-    description: "Give a short description about project 3",
-    link: "https://github.com/",
+    title: "DiscordDB",
+    description: "System bazy danych zintegrowany z Discordem do przechowywania i zarzadzania danymi.",
+    link: "https://github.com/matiqueue/DiscordDB",
+    emoji: "🎮",
   },
 ];
 
@@ -124,26 +128,18 @@ export interface WorkExperience {
 
 export const workExperiences: WorkExperience[] = [
   {
-    company: "Company 2",
+    company: "SG-System",
     logo: "/company-logo.png",
-    position: "Company 2 Position",
-    description: "Write briefly on your experience working at Company 2.",
-    years: "Jan, 2020 - Mar, 2022",
+    position: "Web Developer",
+    description: "Zaprojektowanie i wdrozenie kompletnej strony internetowej sg-system.pl. Odpowiedzialny za frontend, backend oraz optymalizacje SEO.",
+    years: "2023 - 2024",
   },
   {
-    company: "Company 1",
+    company: "Klucze-Rowerowe",
     logo: "/company-logo.png",
-    position: "Company 1 Position",
-    description: "Write briefly on your experience working at Company 1.",
-    years: "Aug, 2018 - Sep, 2018",
-  },
-  {
-    company: "Uni Name",
-    logo: "/company-logo.png",
-    position: "Student",
-    description:
-      "Write briefly about your university experience (degree, subject, etc.)",
-    years: "Aug, 2015 - Jun, 2019",
+    position: "Web Developer",
+    description: "Stworzenie strony e-commerce klucze-rowerowe.pl z katalogiem produktow, systemem zamowien i integracjami platnosci.",
+    years: "2022 - 2023",
   },
 ];
 

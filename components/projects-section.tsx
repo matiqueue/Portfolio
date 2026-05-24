@@ -44,9 +44,12 @@ function ProjectCard({ project, index }: ProjectCardProps) {
         {/* Content */}
         <div className="relative z-10 space-y-4">
           <div className="flex items-start justify-between">
-            <h3 className="text-xl font-bold tracking-tight group-hover:text-primary transition-colors">
-              {project.title}
-            </h3>
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">{project.emoji}</span>
+              <h3 className="text-xl font-bold tracking-tight group-hover:text-primary transition-colors">
+                {project.title}
+              </h3>
+            </div>
             <motion.div
               animate={{
                 x: isHovered ? 5 : 0,
