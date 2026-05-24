@@ -45,7 +45,7 @@ export default function SkillsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="skills" className="py-32 relative" ref={ref}>
+    <section id="skills" className="py-20 relative" ref={ref}>
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
       
@@ -54,7 +54,7 @@ export default function SkillsSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <span className="text-primary font-mono text-sm uppercase tracking-widest">
             Tech Stack

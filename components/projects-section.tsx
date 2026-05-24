@@ -79,22 +79,22 @@ function ProjectCard({ project, index }: ProjectCardProps) {
       transition={{ duration: 0.55, delay: index * 0.08 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="group relative h-full"
+      className="group relative"
     >
       <motion.div
         animate={{ y: hovered ? -4 : 0 }}
         transition={{ type: "spring", stiffness: 300, damping: 22 }}
-        className="relative glass rounded-2xl overflow-hidden h-full flex flex-col"
+        className="relative glass rounded-2xl overflow-hidden flex flex-col"
       >
         {/* Top accent bar */}
         <div className={`h-1 w-full bg-gradient-to-r ${accent}`} />
 
         {/* Card body */}
-        <div className="p-6 flex flex-col flex-1">
+        <div className="p-4 flex flex-col flex-1">
           {/* Header row */}
-          <div className="flex items-start justify-between gap-3 mb-3">
+          <div className="flex items-start justify-between gap-3 mb-2.5">
             <div className="flex-1 min-w-0">
-              <h3 className="text-lg font-bold tracking-tight leading-tight group-hover:text-primary transition-colors">
+              <h3 className="text-base font-bold tracking-tight leading-tight group-hover:text-primary transition-colors">
                 {project.title}
               </h3>
               <div className="mt-1.5">
@@ -116,14 +116,14 @@ function ProjectCard({ project, index }: ProjectCardProps) {
           </div>
 
           {/* Description */}
-          <p className="text-muted-foreground text-sm leading-relaxed flex-1">
+          <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2">
             {project.description}
           </p>
 
           {/* Tech tags */}
           {project.technologies && (
-            <div className="flex flex-wrap gap-1.5 mt-4">
-              {project.technologies.slice(0, 4).map((tech) => (
+            <div className="flex flex-wrap gap-1.5 mt-3">
+              {project.technologies.slice(0, 3).map((tech) => (
                 <span
                   key={tech}
                   className="px-2 py-0.5 text-xs rounded-md bg-secondary text-secondary-foreground border border-border/50 font-medium"
@@ -140,7 +140,7 @@ function ProjectCard({ project, index }: ProjectCardProps) {
           )}
 
           {/* Footer stats + link */}
-          <div className="flex items-center justify-between mt-4 pt-4 border-t border-border/50">
+          <div className="flex items-center justify-between mt-3 pt-3 border-t border-border/50">
             <div className="flex items-center gap-3 text-muted-foreground text-xs">
               {project.stars !== undefined && (
                 <span className="flex items-center gap-1">
@@ -329,13 +329,13 @@ export default function ProjectsSection() {
   const rest = projects.slice(1);
 
   return (
-    <section id="projects" className="py-32 relative" ref={ref}>
+    <section id="projects" className="py-20 relative" ref={ref}>
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <span className="text-primary font-mono text-sm uppercase tracking-widest">
             Portfolio
@@ -343,12 +343,12 @@ export default function ProjectsSection() {
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mt-4">
             Featured Projects
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
+          <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
             Wybrane projekty z mojego GitHuba — od platform gamingowych po narzedzia developerskie
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-5 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
           {/* Featured — spans full width */}
           <FeaturedProjectCard project={featured} index={0} />
 
@@ -364,7 +364,7 @@ export default function ProjectsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.25 }}
-          className="flex justify-center mt-12"
+          className="flex justify-center mt-8"
         >
           <a
             href="https://github.com/matiqueue"
