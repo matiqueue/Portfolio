@@ -9,10 +9,12 @@ import SkillsSection from "@/components/skills-section";
 import ProjectsSection from "@/components/projects-section";
 import WorkSection from "@/components/work-section";
 import ContactSection from "@/components/contact-section";
+import { LoadingScreen } from "@/components/loading-screen";
 
 export default function Home() {
   return (
     <div className="relative">
+      <LoadingScreen />
       <Navbar />
       <main className="relative z-10">
         <HeroSection />

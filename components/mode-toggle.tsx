@@ -2,16 +2,8 @@
 
 import * as React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Moon, Sun, Monitor } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 export function ModeToggle() {
   const { setTheme, theme } = useTheme();
@@ -21,67 +13,73 @@ export function ModeToggle() {
     setMounted(true);
   }, []);
 
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   if (!mounted) {
     return (
-      <Button variant="ghost" size="icon" className="glass border-0">
-        <Sun className="h-4 w-4" />
-      </Button>
+      <div className="glass border-0 rounded-full p-1 flex items-center gap-1">
+        <div className="w-8 h-8 rounded-full" />
+        <div className="w-8 h-8 rounded-full" />
+      </div>
     );
   }
 
+  const isDark = theme === "dark";
+
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" className="glass border-0 hover:glow-sm relative overflow-hidden">
-          <AnimatePresence mode="wait">
-            {theme === "dark" ? (
-              <motion.div
-                key="moon"
-                initial={{ rotate: -90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: 90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Moon className="h-4 w-4 text-primary" />
-              </motion.div>
-            ) : (
-              <motion.div
-                key="sun"
-                initial={{ rotate: 90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: -90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Sun className="h-4 w-4 text-primary" />
-              </motion.div>
-            )}
-          </AnimatePresence>
-          <span className="sr-only">Toggle theme</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="glass border-border/50">
-        <DropdownMenuItem 
-          onClick={() => setTheme("light")}
-          className="flex items-center gap-2 cursor-pointer"
-        >
-          <Sun className="h-4 w-4" />
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem 
-          onClick={() => setTheme("dark")}
-          className="flex items-center gap-2 cursor-pointer"
-        >
-          <Moon className="h-4 w-4" />
-          Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem 
-          onClick={() => setTheme("system")}
-          className="flex items-center gap-2 cursor-pointer"
-        >
-          <Monitor className="h-4 w-4" />
-          System
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <div className="glass border-0 rounded-full p-1 flex items-center gap-1 relative">
+      {/* Background indicator */}
+      <motion.div
+        className="absolute w-8 h-8 rounded-full bg-primary/20"
+        animate={{
+          x: isDark ? 36 : 0,
+        }}
+        transition={{ type: "spring", stiffness: 300, damping: 25 }}
+      />
+      
+      {/* Light button */}
+      <button
+        onClick={() => setTheme("light")}
+        className={`relative z-10 w-8 h-8 rounded-full flex items-center justify-center transition-colors ${
+          !isDark ? "text-primary" : "text-muted-foreground hover:text-foreground"
+        }`}
+        aria-label="Light mode"
+      >
+        <AnimatePresence mode="wait">
+          <motion.div
+            key="sun"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            transition={{ duration: 0.15 }}
+          >
+            <Sun className="h-4 w-4" />
+          </motion.div>
+        </AnimatePresence>
+      </button>
+
+      {/* Dark button */}
+      <button
+        onClick={() => setTheme("dark")}
+        className={`relative z-10 w-8 h-8 rounded-full flex items-center justify-center transition-colors ${
+          isDark ? "text-primary" : "text-muted-foreground hover:text-foreground"
+        }`}
+        aria-label="Dark mode"
+      >
+        <AnimatePresence mode="wait">
+          <motion.div
+            key="moon"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            transition={{ duration: 0.15 }}
+          >
+            <Moon className="h-4 w-4" />
+          </motion.div>
+        </AnimatePresence>
+      </button>
+    </div>
   );
 }
