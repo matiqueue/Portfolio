@@ -151,10 +151,35 @@ export interface WorkExperience {
   description: string;
   years: string;
   skills?: string[];
+  link?: string;
 }
 
-export const workExperiences: WorkExperience[] = [
+export interface WorkExperienceType {
+  type: "school" | "project" | "job";
+}
+
+export const workExperiences: (WorkExperience & WorkExperienceType)[] = [
   {
+    type: "school",
+    company: "Szkola im. Antoniego Kocjana w Olkuszu",
+    logo: "",
+    position: "Technik programista",
+    description: "Nauka programowania w specjalizacji technik programista. Zdobywanie podstaw algorytmiki, programowania obiektowego, baz danych oraz tworzenia aplikacji webowych i desktopowych. Realizacja projektow szkolnych i rozwijanie umiejetnosci praktycznych.",
+    years: "2021 - Obecnie",
+    skills: ["Algorytmika", "Programowanie", "Bazy danych"],
+  },
+  {
+    type: "project",
+    company: "Konsola Operatorska",
+    logo: "",
+    position: "Projekt szkolny / Developer",
+    description: "Aplikacja konsoli operatorskiej stworzona w ramach projektu szkolnego — panel zarzadzania z analitykami zbieranymi przez Hotjar. Realizacja pelnego cyklu: projekt, implementacja, wdrozenie.",
+    years: "2024",
+    skills: ["Web App", "Analytics", "Hotjar"],
+    link: "https://github.com/matiqueue/konsola-operatorska",
+  },
+  {
+    type: "job",
     company: "Projekty Open Source",
     logo: "/github-logo.png",
     position: "Fullstack Developer",
@@ -163,6 +188,7 @@ export const workExperiences: WorkExperience[] = [
     skills: ["Open Source", "Community", "Collaboration"],
   },
   {
+    type: "job",
     company: "SG-System",
     logo: "/company-logo.png",
     position: "Web Developer",
@@ -171,6 +197,7 @@ export const workExperiences: WorkExperience[] = [
     skills: ["Frontend", "Backend", "SEO"],
   },
   {
+    type: "job",
     company: "Klucze-Rowerowe",
     logo: "/company-logo.png",
     position: "Web Developer",
@@ -179,6 +206,7 @@ export const workExperiences: WorkExperience[] = [
     skills: ["E-commerce", "Payments", "UX"],
   },
   {
+    type: "job",
     company: "Freelance",
     logo: "/freelance-logo.png",
     position: "Junior Developer",
