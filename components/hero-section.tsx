@@ -46,7 +46,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="space-y-8"
+          className="space-y-8 dark:text-white"
         >
           {/* Badge */}
           <motion.div
@@ -76,7 +76,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.25, duration: 0.5 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty"
+            className="text-lg md:text-xl text-muted-foreground dark:text-white max-w-2xl mx-auto text-pretty"
           >
             {marketingHeadlines.subHeadline}
           </motion.p>
@@ -90,17 +90,17 @@ export default function HeroSection() {
           >
             <div className="text-center">
               <p className="text-3xl md:text-4xl font-bold text-primary">{aboutYou.yearsOfExperience}</p>
-              <p className="text-sm text-muted-foreground">Experience</p>
+              <p className="text-sm text-muted-foreground dark:text-white">Experience</p>
             </div>
             <div className="w-px bg-border hidden md:block" />
             <div className="text-center">
               <p className="text-3xl md:text-4xl font-bold text-primary">10+</p>
-              <p className="text-sm text-muted-foreground">Projects</p>
+              <p className="text-sm text-muted-foreground dark:text-white">Projects</p>
             </div>
             <div className="w-px bg-border hidden md:block" />
             <div className="text-center">
               <p className="text-3xl md:text-4xl font-bold text-primary">Full</p>
-              <p className="text-sm text-muted-foreground">Stack</p>
+              <p className="text-sm text-muted-foreground dark:text-white">Stack</p>
             </div>
           </motion.div>
 
@@ -125,7 +125,7 @@ export default function HeroSection() {
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="flex flex-col items-center gap-2 text-muted-foreground"
+            className="flex flex-col items-center gap-2 text-muted-foreground dark:text-white"
           >
             <span className="text-xs uppercase tracking-widest">Scroll</span>
             <ArrowDown className="w-4 h-4" />
