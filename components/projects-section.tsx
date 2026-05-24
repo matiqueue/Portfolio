@@ -79,18 +79,18 @@ function ProjectCard({ project, index }: ProjectCardProps) {
       transition={{ duration: 0.55, delay: index * 0.08 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="group relative h-full"
+      className="group relative"
     >
       <motion.div
         animate={{ y: hovered ? -4 : 0 }}
         transition={{ type: "spring", stiffness: 300, damping: 22 }}
-        className="relative glass rounded-2xl overflow-hidden h-full flex flex-col"
+        className="relative glass rounded-2xl overflow-hidden flex flex-col min-h-[220px]"
       >
         {/* Top accent bar */}
         <div className={`h-1 w-full bg-gradient-to-r ${accent}`} />
 
         {/* Card body */}
-        <div className="p-6 flex flex-col flex-1">
+        <div className="p-5 flex flex-col flex-1">
           {/* Header row */}
           <div className="flex items-start justify-between gap-3 mb-3">
             <div className="flex-1 min-w-0">
@@ -348,7 +348,7 @@ export default function ProjectsSection() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-5 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
           {/* Featured — spans full width */}
           <FeaturedProjectCard project={featured} index={0} />
 
