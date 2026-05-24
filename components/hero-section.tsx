@@ -19,7 +19,7 @@ export default function HeroSection() {
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Two-column layout */}
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-0 md:gap-8 items-end max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_minmax(260px,380px)] gap-0 md:gap-12 lg:gap-16 items-end max-w-6xl mx-auto">
 
           {/* ── LEFT: text content ── */}
           <motion.div
@@ -112,7 +112,7 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* ── RIGHT: sketch photo — sits flush with bottom, no frame ── */}
+          {/* ── RIGHT: sketch photo — proportional to hero, with theme tint ── */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -120,14 +120,34 @@ export default function HeroSection() {
             className="relative flex justify-center md:justify-end self-end"
           >
             {/* Soft glow under the figure */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-48 h-24 bg-primary/20 blur-3xl rounded-full pointer-events-none" />
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-56 h-20 bg-primary/25 blur-3xl rounded-full pointer-events-none" />
 
-            <img
-              src="/me/profilowe2.png"
-              alt="Szymon Góral"
-              className="relative w-72 md:w-[22rem] lg:w-[26rem] xl:w-[30rem] h-auto object-contain object-bottom drop-shadow-2xl select-none"
-              draggable={false}
-            />
+            {/* Photo wrapper — fixed proportional height tied to viewport */}
+            <div className="relative w-[260px] md:w-[300px] lg:w-[340px] xl:w-[380px] h-[360px] md:h-[420px] lg:h-[480px] xl:h-[540px] select-none">
+              <img
+                src="/me/profilowe2.png"
+                alt="Szymon Góral"
+                className="absolute inset-0 w-full h-full object-contain object-bottom drop-shadow-2xl"
+                draggable={false}
+              />
+              {/* Theme-aware blue tint overlay:
+                  light mode → multiply blends deep-blue over the sketch highlights
+                  dark  mode → screen softly adds cyan glow into the sketch shadows  */}
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background: "hsl(var(--primary) / 0.18)",
+                  mixBlendMode: "multiply",
+                }}
+              />
+              <div
+                className="absolute inset-0 pointer-events-none dark:block hidden"
+                style={{
+                  background: "hsl(var(--primary) / 0.22)",
+                  mixBlendMode: "screen",
+                }}
+              />
+            </div>
           </motion.div>
         </div>
       </div>
