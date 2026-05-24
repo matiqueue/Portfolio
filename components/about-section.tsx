@@ -19,7 +19,7 @@ export default function AboutSection() {
   return (
     <section id="about" className="py-32 relative" ref={ref}>
       <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto space-y-10">
+        <div className="space-y-10 max-w-5xl mx-auto">
 
           {/* Label */}
           <motion.span

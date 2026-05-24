@@ -117,7 +117,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.18, duration: 0.75, ease: "easeOut" }}
-            className="relative flex justify-center md:justify-end self-end"
+            className="relative flex justify-center md:justify-end self-end mt-6 md:mt-0"
           >
             {/* Radial glow behind / around the figure */}
             <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-72 h-72 rounded-full bg-primary/20 blur-[80px] pointer-events-none" />
