@@ -9,7 +9,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-24 md:pt-0"
     >
       {/* Subtle background decoration */}
       <div className="absolute inset-0 pointer-events-none">
@@ -19,7 +19,7 @@ export default function HeroSection() {
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Two-column layout */}
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_minmax(260px,380px)] gap-0 md:gap-12 lg:gap-16 items-end max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_minmax(320px,460px)] gap-0 md:gap-8 lg:gap-12 items-end max-w-6xl mx-auto">
 
           {/* ── LEFT: text content ── */}
           <motion.div
@@ -112,40 +112,25 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* ── RIGHT: sketch photo — proportional to hero, with theme tint ── */}
+          {/* ── RIGHT: sketch photo ── */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.18, duration: 0.75, ease: "easeOut" }}
             className="relative flex justify-center md:justify-end self-end"
           >
-            {/* Soft glow under the figure */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-56 h-20 bg-primary/25 blur-3xl rounded-full pointer-events-none" />
+            {/* Radial glow behind / around the figure */}
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-72 h-72 rounded-full bg-primary/20 blur-[80px] pointer-events-none" />
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-48 h-16 bg-primary/30 blur-2xl rounded-full pointer-events-none" />
 
-            {/* Photo wrapper — fixed proportional height tied to viewport */}
-            <div className="relative w-[260px] md:w-[300px] lg:w-[340px] xl:w-[380px] h-[360px] md:h-[420px] lg:h-[480px] xl:h-[540px] select-none">
+            {/* Photo — height tied to the hero section proportionally */}
+            <div className="relative select-none w-[300px] md:w-[380px] lg:w-[440px] xl:w-[500px] h-[420px] md:h-[520px] lg:h-[600px] xl:h-[680px]">
               <img
                 src="/me/profilowe2.png"
                 alt="Szymon Góral"
-                className="absolute inset-0 w-full h-full object-contain object-bottom drop-shadow-2xl"
+                className="absolute inset-0 w-full h-full object-contain object-bottom"
                 draggable={false}
-              />
-              {/* Theme-aware blue tint overlay:
-                  light mode → multiply blends deep-blue over the sketch highlights
-                  dark  mode → screen softly adds cyan glow into the sketch shadows  */}
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  background: "hsl(var(--primary) / 0.18)",
-                  mixBlendMode: "multiply",
-                }}
-              />
-              <div
-                className="absolute inset-0 pointer-events-none dark:block hidden"
-                style={{
-                  background: "hsl(var(--primary) / 0.22)",
-                  mixBlendMode: "screen",
-                }}
+                style={{ filter: "drop-shadow(0 0 32px hsl(var(--primary) / 0.35)) drop-shadow(0 8px 24px rgba(0,0,0,0.18))" }}
               />
             </div>
           </motion.div>
