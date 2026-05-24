@@ -128,7 +128,7 @@ export default function HeroSection() {
               <img
                 src="/me/profilowe2.png"
                 alt="Szymon Góral"
-                className="absolute inset-0 w-full h-full object-contain object-bottom"
+                className="absolute inset-0 w-full h-full object-cover object-center"
                 draggable={false}
                 style={{ filter: "drop-shadow(0 0 32px hsl(var(--primary) / 0.35)) drop-shadow(0 8px 24px rgba(0,0,0,0.18))" }}
               />
