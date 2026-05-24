@@ -88,6 +88,15 @@
     background-image: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--primary)));
   }
 
+  /* In dark mode the heading is plain white — no gradient clip */
+  .dark .text-gradient {
+    -webkit-text-fill-color: hsl(0 0% 100%);
+    color: hsl(0 0% 100%);
+    background-image: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+  }
+
   .glass {
     @apply backdrop-blur-xl border;
     background-color: hsl(var(--card) / 0.8);
