@@ -329,13 +329,13 @@ export default function ProjectsSection() {
   const rest = projects.slice(1);
 
   return (
-    <section id="projects" className="py-32 relative" ref={ref}>
+    <section id="projects" className="py-20 relative" ref={ref}>
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <span className="text-primary font-mono text-sm uppercase tracking-widest">
             Portfolio
@@ -343,7 +343,7 @@ export default function ProjectsSection() {
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mt-4">
             Featured Projects
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
+          <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
             Wybrane projekty z mojego GitHuba — od platform gamingowych po narzedzia developerskie
           </p>
         </motion.div>
@@ -364,7 +364,7 @@ export default function ProjectsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.25 }}
-          className="flex justify-center mt-12"
+          className="flex justify-center mt-8"
         >
           <a
             href="https://github.com/matiqueue"

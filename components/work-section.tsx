@@ -274,7 +274,7 @@ export default function WorkSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="work" className="py-32 relative" ref={ref}>
+    <section id="work" className="py-20 relative" ref={ref}>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
@@ -282,7 +282,7 @@ export default function WorkSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <span className="text-primary font-mono text-sm uppercase tracking-widest">
             Experience
@@ -290,12 +290,12 @@ export default function WorkSection() {
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mt-4">
             Work History
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
+          <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
             Moja sciezka — od szkoly przez pierwsze projekty az po komercyjne realizacje
           </p>
 
           {/* Legend */}
-          <div className="flex flex-wrap items-center justify-center gap-4 mt-6">
+          <div className="flex flex-wrap items-center justify-center gap-4 mt-4">
             {[
               { color: "bg-violet-500", label: "Edukacja" },
               { color: "bg-emerald-500", label: "Projekt" },
@@ -317,7 +317,7 @@ export default function WorkSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="flex justify-center mb-4"
+            className="flex justify-center mb-2"
           >
             <div className="px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-mono flex items-center gap-2">
               <Briefcase className="w-3.5 h-3.5" />
@@ -342,7 +342,7 @@ export default function WorkSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="flex justify-center mt-8"
+            className="flex justify-center mt-6"
           >
             <div className="flex flex-col items-center gap-2">
               <div className="w-0.5 h-8 bg-gradient-to-b from-primary/30 to-transparent" />

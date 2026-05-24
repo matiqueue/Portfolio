@@ -17,7 +17,7 @@ export default function AboutSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="py-32 relative" ref={ref}>
+    <section id="about" className="py-20 relative" ref={ref}>
       <div className="container mx-auto px-6">
         <div className="space-y-10 max-w-5xl mx-auto">
 
