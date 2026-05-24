@@ -241,7 +241,7 @@ export const aboutYou = {
     "👋 Czesc, jestem Szymon! Jestem fullstack developerem specjalizujacym sie w tworzeniu nowoczesnych aplikacji webowych. Pracuje glownie z Next.js, TypeScript i MongoDB. Pasjonuje sie budowaniem intuicyjnych interfejsow uzytkownika oraz skalowalnych rozwiazn backendowych.",
   yearsOfExperience: "Od 2021",
   location: "Olkusz, Polska",
-  email: "szymongoral@icloud.com",
+  email: "szymon.goral@icloud.com",
 };
 
 export const logoText = "@matiqueue";
