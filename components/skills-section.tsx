@@ -88,7 +88,7 @@ export default function SkillsSection() {
                 className="group"
               >
                 <div className="glass rounded-xl px-5 py-3 flex items-center gap-3 cursor-default transition-all duration-300 group-hover:glow group-hover:border-primary/50">
-                  <Icon className="w-5 h-5 text-primary transition-transform duration-300 group-hover:scale-110" />
+                  {Icon && <Icon className="w-5 h-5 text-primary transition-transform duration-300 group-hover:scale-110" />}
                   <span className="font-medium text-sm">{skill.text}</span>
                 </div>
               </motion.div>
