@@ -152,6 +152,7 @@ export interface WorkExperience {
   years: string;
   skills?: string[];
   link?: string;
+  iconType?: "school" | "github" | "console" | "server" | "chess" | "bike" | "code";
 }
 
 export interface WorkExperienceType {
@@ -167,6 +168,18 @@ export const workExperiences: (WorkExperience & WorkExperienceType)[] = [
     description: "Nauka programowania w specjalizacji technik programista. Zdobywanie podstaw algorytmiki, programowania obiektowego, baz danych oraz tworzenia aplikacji webowych i desktopowych. Realizacja projektow szkolnych i rozwijanie umiejetnosci praktycznych.",
     years: "2021 - Obecnie",
     skills: ["Algorytmika", "Programowanie", "Bazy danych"],
+    iconType: "school",
+  },
+  {
+    type: "job",
+    company: "Projekty Open Source",
+    logo: "",
+    position: "Fullstack Developer",
+    description: "Aktywny wklad w spolecznosc open source poprzez tworzenie i rozwijanie projektow publicznych na GitHubie. Budowanie narzedzi dla developerow i graczy.",
+    years: "2022 - Obecnie",
+    skills: ["Open Source", "Community", "Collaboration"],
+    link: "https://github.com/matiqueue",
+    iconType: "github",
   },
   {
     type: "project",
@@ -174,45 +187,51 @@ export const workExperiences: (WorkExperience & WorkExperienceType)[] = [
     logo: "",
     position: "Projekt szkolny / Developer",
     description: "Aplikacja konsoli operatorskiej stworzona w ramach projektu szkolnego — panel zarzadzania z analitykami zbieranymi przez Hotjar. Realizacja pelnego cyklu: projekt, implementacja, wdrozenie.",
-    years: "2024",
+    years: "2023",
     skills: ["Web App", "Analytics", "Hotjar"],
     link: "https://github.com/matiqueue/konsola-operatorska",
-  },
-  {
-    type: "job",
-    company: "Projekty Open Source",
-    logo: "/github-logo.png",
-    position: "Fullstack Developer",
-    description: "Aktywny wklad w spolecznosc open source poprzez tworzenie i rozwijanie projektow publicznych na GitHubie. Budowanie narzedzi dla developerow i graczy.",
-    years: "2024 - Obecnie",
-    skills: ["Open Source", "Community", "Collaboration"],
+    iconType: "console",
   },
   {
     type: "job",
     company: "SG-System",
-    logo: "/company-logo.png",
+    logo: "",
     position: "Web Developer",
     description: "Zaprojektowanie i wdrozenie kompletnej strony internetowej sg-system.pl. Odpowiedzialny za frontend, backend oraz optymalizacje SEO. Praca z klientem nad wymaganiami i iteracyjne dostarczanie funkcjonalnosci.",
-    years: "2023 - 2024",
+    years: "2024",
     skills: ["Frontend", "Backend", "SEO"],
+    iconType: "server",
+  },
+  {
+    type: "project",
+    company: "Mate Chess",
+    logo: "",
+    position: "Lead Developer",
+    description: "Zaawansowana platforma szachowa z funkcjami gry online w czasie rzeczywistym, analizy partii z wykorzystaniem silnika szachowego, nauki strategii oraz rankingiem graczy. Projekt wykorzystuje nowoczesny stack technologiczny.",
+    years: "2025",
+    skills: ["Next.js", "TypeScript", "MongoDB", "Socket.io"],
+    link: "https://github.com/matiqueue/mate-chess.pl",
+    iconType: "chess",
   },
   {
     type: "job",
     company: "Klucze-Rowerowe",
-    logo: "/company-logo.png",
+    logo: "",
     position: "Web Developer",
     description: "Stworzenie strony e-commerce klucze-rowerowe.pl z katalogiem produktow, systemem zamowien i integracjami platnosci. Implementacja responsywnego designu i optymalizacja wydajnosci.",
-    years: "2022 - 2023",
+    years: "2026",
     skills: ["E-commerce", "Payments", "UX"],
+    iconType: "bike",
   },
   {
     type: "job",
     company: "Freelance",
-    logo: "/freelance-logo.png",
+    logo: "",
     position: "Junior Developer",
     description: "Poczatek przygody z programowaniem. Nauka podstaw web developmentu, tworzenie pierwszych projektow i budowanie portfolio. Zdobywanie doswiadczenia poprzez praktyczne projekty.",
-    years: "2021 - 2022",
+    years: "2026 - Obecnie",
     skills: ["Learning", "Web Basics", "Portfolio"],
+    iconType: "code",
   },
 ];
 

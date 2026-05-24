@@ -13,14 +13,42 @@ import {
   FolderGit2,
   ExternalLink,
   Briefcase,
+  Github,
+  Terminal,
+  Server,
+  Bike,
+  Code,
 } from "lucide-react";
+import { SiChessdotcom } from "react-icons/si";
 
 type WorkType = "school" | "project" | "job";
+type IconType = "school" | "github" | "console" | "server" | "chess" | "bike" | "code";
 
 interface WorkCardProps {
   experience: (typeof workExperiences)[number];
   index: number;
   isLast: boolean;
+}
+
+function getAvatarIcon(iconType?: IconType) {
+  switch (iconType) {
+    case "school":
+      return <GraduationCap className="w-6 h-6" />;
+    case "github":
+      return <Github className="w-6 h-6" />;
+    case "console":
+      return <Terminal className="w-6 h-6" />;
+    case "server":
+      return <Server className="w-6 h-6" />;
+    case "chess":
+      return <SiChessdotcom className="w-6 h-6" />;
+    case "bike":
+      return <Bike className="w-6 h-6" />;
+    case "code":
+      return <Code className="w-6 h-6" />;
+    default:
+      return <Building2 className="w-6 h-6" />;
+  }
 }
 
 function getNodeIcon(type: WorkType) {
@@ -52,6 +80,7 @@ function WorkCardContent({
 }) {
   const type = experience.type as WorkType;
   const badge = getTypeBadge(type);
+  const iconType = experience.iconType as IconType | undefined;
 
   return (
     <motion.div
@@ -86,13 +115,7 @@ function WorkCardContent({
             <Avatar className="w-12 h-12 ring-2 ring-primary/20 ring-offset-2 ring-offset-background">
               <AvatarImage src={experience.logo} />
               <AvatarFallback className="bg-primary/10 text-primary">
-                {type === "school" ? (
-                  <GraduationCap className="w-6 h-6" />
-                ) : type === "project" ? (
-                  <FolderGit2 className="w-6 h-6" />
-                ) : (
-                  <Building2 className="w-6 h-6" />
-                )}
+                {getAvatarIcon(iconType)}
               </AvatarFallback>
             </Avatar>
           </motion.div>

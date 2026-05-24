@@ -4,12 +4,8 @@ import { motion } from "framer-motion";
 import { aboutYou, marketingHeadlines } from "@/lib/data";
 import { ArrowDown, Sparkles } from "lucide-react";
 import ActionButton from "./action-button";
-import { useTheme } from "next-themes";
 
 export default function HeroSection() {
-  const { resolvedTheme } = useTheme();
-  const isDark = resolvedTheme === "dark";
-
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Simplified decorative 3D elements */}
@@ -46,7 +42,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="space-y-8 dark:text-white"
+          className="space-y-8"
         >
           {/* Badge */}
           <motion.div
@@ -56,7 +52,7 @@ export default function HeroSection() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass glow-sm"
           >
             <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-muted-foreground">
+            <span className="text-sm font-medium text-foreground">
               {aboutYou.location}
             </span>
           </motion.div>
@@ -66,9 +62,9 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.5 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-balance"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-balance text-foreground"
           >
-            <span className={isDark ? "text-white" : "text-gradient"}>{marketingHeadlines.mainHeadline}</span>
+            {marketingHeadlines.mainHeadline}
           </motion.h1>
 
           {/* Subtitle */}
@@ -76,7 +72,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.25, duration: 0.5 }}
-            className="text-lg md:text-xl text-muted-foreground dark:text-white max-w-2xl mx-auto text-pretty"
+            className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto text-pretty"
           >
             {marketingHeadlines.subHeadline}
           </motion.p>
@@ -90,17 +86,17 @@ export default function HeroSection() {
           >
             <div className="text-center">
               <p className="text-3xl md:text-4xl font-bold text-primary">{aboutYou.yearsOfExperience}</p>
-              <p className="text-sm text-muted-foreground dark:text-white">Experience</p>
+              <p className="text-sm text-foreground/70">Experience</p>
             </div>
             <div className="w-px bg-border hidden md:block" />
             <div className="text-center">
               <p className="text-3xl md:text-4xl font-bold text-primary">10+</p>
-              <p className="text-sm text-muted-foreground dark:text-white">Projects</p>
+              <p className="text-sm text-foreground/70">Projects</p>
             </div>
             <div className="w-px bg-border hidden md:block" />
             <div className="text-center">
               <p className="text-3xl md:text-4xl font-bold text-primary">Full</p>
-              <p className="text-sm text-muted-foreground dark:text-white">Stack</p>
+              <p className="text-sm text-foreground/70">Stack</p>
             </div>
           </motion.div>
 
@@ -125,7 +121,7 @@ export default function HeroSection() {
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="flex flex-col items-center gap-2 text-muted-foreground dark:text-white"
+            className="flex flex-col items-center gap-2 text-foreground/70"
           >
             <span className="text-xs uppercase tracking-widest">Scroll</span>
             <ArrowDown className="w-4 h-4" />
