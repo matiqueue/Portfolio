@@ -124,11 +124,11 @@ export default function HeroSection() {
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-48 h-16 bg-primary/30 blur-2xl rounded-full pointer-events-none" />
 
             {/* Photo — height tied to the hero section proportionally */}
-            <div className="relative select-none w-[300px] md:w-[380px] lg:w-[440px] xl:w-[500px] h-[420px] md:h-[520px] lg:h-[600px] xl:h-[680px]">
+            <div className="relative select-none w-[260px] md:w-[320px] lg:w-[370px] xl:w-[420px] h-[360px] md:h-[440px] lg:h-[510px] xl:h-[580px] p-3">
               <img
                 src="/me/profilowe2.png"
                 alt="Szymon Góral"
-                className="absolute inset-0 w-full h-full object-cover object-center"
+                className="absolute inset-3 w-[calc(100%-1.5rem)] h-[calc(100%-1.5rem)] object-cover object-center"
                 draggable={false}
                 style={{ filter: "drop-shadow(0 0 32px hsl(var(--primary) / 0.35)) drop-shadow(0 8px 24px rgba(0,0,0,0.18))" }}
               />
