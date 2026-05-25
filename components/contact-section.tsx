@@ -11,8 +11,8 @@ export default function ContactSection() {
 
   const socialLinks = [
     { icon: Github, href: "https://github.com/matiqueue", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/szymon-g%C3%B3ral-214b232b2/", label: "LinkedIn" },
+    { icon: Twitter, href: "https://x.com/matiqueue/", label: "X" },
   ];
 
   return (
